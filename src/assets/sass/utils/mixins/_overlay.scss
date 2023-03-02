@@ -1,0 +1,16 @@
+// + Overlay
+// -------
+$overlay-zindex: 999 !default;
+$overlay-background: rgba(#000, .3) !default;
+
+@mixin overlay-style() {
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-color: $overlay-background;
+	opacity: 0;
+	transition: .2s ease-in;
+	z-index: -1;
+}

@@ -1,0 +1,9 @@
+// + Overlay
+// -------
+.ui-overlay {
+	@include overlay-style();
+}
+
+.text-center {
+	text-align: center;
+}

@@ -1,0 +1,50 @@
+//************************
+//    VARIABLES
+//************************
+$gl-colCount:           12 !default;
+$gl-gridName:           grid !default;
+$gl-colName:            col !default;
+$gl-attributeName:      class !default;
+$gl-gridClass:          grid !default;
+$gl-colClass:           grid-col !default;
+$gl-gutter:             1rem !default; // Total left + right
+$gl-gutter-vertical:    1rem !default;
+$gl-margin-top:         30px !default;
+$gl-margin-bottom:      $gl-margin-top !default;
+$gl-mq-width:           'min-width' !default;
+$gl-mq-list: (
+    xs: 30em,   //  480px / 16
+    sm: 40em,   //  640px / 16
+    md: 48em,   //  768px / 16
+    lg: 62em,   //  992px / 16
+    xl: 75em    // 1200px / 16
+) !default;
+$gl-v-list: (
+    top: flex-start,
+    middle: center,
+    bottom: flex-end
+) !default;
+
+$gl-properties: ( // REVIEW
+    equalHeight: equalHeight,
+    noGutter: noGutter,
+    noBottom: noBottom,
+    column: column,
+    reverse: reverse
+
+) !default;
+
+$gl-max-width: $container-max-width !default;
+$gl-gutter-sides-breakpoint: $tablet-landscape !default; //## 992px by default
+$gl-gutter-sides: $gutter-sides !default; //## whole web container padding left/right
+$gl-gutter-sides-desktop: $gutter-sides-desktop !default;
+
+// backgroun colors
+$gl-backgroundColor1: #f3f3f3 !default; // use individual variable to rewrite
+$gl-backgroundColor2: #f7f7f7 !default;
+$gl-backgroundColor3: #eee !default;
+$gl-background-colors: (
+    backgroundColor1: $gl-backgroundColor1,
+    backgroundColor2: $gl-backgroundColor2,
+    backgroundColor3: $gl-backgroundColor3
+) !default;

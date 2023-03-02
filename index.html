@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Site Description">
+    <link rel="apple-touch-icon" sizes="180x180" href="./src/assets/imgs/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./src/assets/imgs/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./src/assets/imgs/favicon/favicon-16x16.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="./dist/styles.css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700&amp;subset=latin-ext&amp;display=swap"
+        rel="stylesheet">
+        
+    <title>Site title</title>
+</head>
+
+<body class="home-page">
+    <div class="page-wrap">
+        <main class="maincontent">
+            <div class="content-wrap">
+                <div class="bg-img_container">
+                    <div class="player_video_player">
+                        <video id="player_video"
+                            class="player_video"
+                            poster="https://video.playfilm.tv/media/3/users/20706/resources/mobile_GB6mSbT.mp4_poster.jpg?seq=3"
+                            data-index="0"
+                            muted="muted"
+                            autoplay loop
+                            src="https://video.playfilm.tv/media/3/users/21772/resources/2023082/clips/mobile_qua_standar.mp4?seq=3">
+                        </video>
+                    </div>
+                    <div class="questionnaire_wrapper">
+
+                        <div class="questionnaire-steps">
+                            <h3 class="questionnaire-steps_text">
+                                Paso 5 DE 7
+                            </h3>
+                        </div>
+
+                        <div class="questionnaire-container">
+                            <div class="questionnaire-title">
+                                <h3 class="questionnaire-title_text">
+                                    ¿Quieres una <span class="bold">tarifa</span> con llamadas ilimitadas?
+                                </h3>
+                            </div>
+                            <div class="questionnaire-options">
+                                <div class="questionnaire-item">
+                                    <button class="button btn-primary">
+                                        Si<i class="fas fa-chevron-right"></i>
+                                    </button>
+                                </div>
+                                <div class="questionnaire-item">
+                                    <button class="button btn-primary">
+                                        No<i class="fas fa-chevron-right"></i>
+                                    </button>
+                                </div>
+                                <div class="questionnaire-item">
+                                    <button class="button btn-primary">
+                                        Indiferente<i class="fas fa-chevron-right"></i>
+                                    </button>
+                                </div>
+                                <div class="questionnaire-item">
+                                    <div class="ui-form_grid ui-form_grid--allfullwidth">
+                                        <div class="ui-form_group">
+                                            <div class="ui-input-container">
+                                                <label class="ui-label" for="code">
+                                                    Código postal
+                                                </label>
+                                                <div class="ui-input_wrap">
+                                                    <input class="ui-input" placeholder="Ej: 28926" type="text" name="code" id="code">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="questionnaire-item">
+                                    <button class="button btn-primary">
+                                        Continuar<i class="fas fa-chevron-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

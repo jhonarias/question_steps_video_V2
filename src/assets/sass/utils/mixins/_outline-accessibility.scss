@@ -1,0 +1,5 @@
+// + Outline (accessibility focus)
+// -------
+@mixin accessibility-outline() {
+	outline: 1px dotted $accessibility-outline-color;
+}

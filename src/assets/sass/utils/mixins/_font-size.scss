@@ -1,0 +1,5 @@
+// + Rem unit for font-size
+// -------
+@mixin font-size($size) {
+	font-size: calculateRem($size);
+}

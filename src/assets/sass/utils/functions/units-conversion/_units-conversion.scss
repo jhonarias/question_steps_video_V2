@@ -1,0 +1,32 @@
+// ****************************************
+//  UTILS
+//
+// ****************************************
+//  FUNCTIONS
+// ****************************************
+//
+//    + Convert px into rem
+//
+// ****************************************
+
+//  + Convert px into rem
+// -------
+$parentSize: 16px;
+
+@function calculateRem($size) {
+    $remSize: $size / $parentSize;
+    @return #{$remSize}rem;
+}
+
+@function calculateEm($size,
+    $currentSize: 16px, // relative em size
+
+) {
+    $remSize: $size / $currentSize;
+    @return #{$remSize}em;
+}
+
+@function calculateVw($size) {
+    $vw-context: (1000*.01) * 1px;
+    @return ($size/$vw-context) * 1vw;
+}

@@ -1,0 +1,130 @@
+// Make the breakpoints
+@mixin bp($breakpoint) {
+    $query: map-get($gl-mq-list, $breakpoint);
+    @if $query != null {
+        @media ($gl-mq-width: #{nth($query, 1)}) {
+            @content;
+        }
+    }
+}
+
+// Function to generate the grid by number
+@mixin makeGridByNumber($grid)
+{
+  @for $i from 1 through $gl-colCount {
+      .#{$grid}-#{$i} > .#{$gl-colClass} {
+          $fraction: 1 / $i;
+          flex-basis: map-get($gl-colFractions, $fraction);
+          max-width: map-get($gl-colFractions, $fraction);
+      }
+  }
+}
+
+// Function to generate the grid by columns
+@mixin makeCol($col)
+{
+  @for $i from 1 through $gl-colCount {
+    .#{$col}-#{$i} {
+      flex-basis: map-get($gl-colPortions, $i); 
+      max-width: map-get($gl-colPortions, $i);
+    }
+  }
+}
+
+// Function to generate the -first & -last base on mq keys (as lg-first)
+@mixin makeFirstLast
+{
+    .#{$gl-colName}-first {
+        order: -1;
+    }
+    .#{$gl-colName}-last {
+        order: 1;
+    }
+}
+@mixin makeFirstLastResponsive($mq)
+{
+    .#{$gl-colName}-#{$mq}-first {
+        order: -1;
+    }
+    .#{$gl-colName}-#{$mq}-last {
+        order: 1;
+    }
+}
+
+// Function to generate the -noBottom and -withBottom base on mq keys (as _lg-withBottom)
+// REVIEW: 4/10 - PERFORMANCE ISSUES
+// ---------------------------------------------
+@mixin makeNoBottomResponsiveModifier($mq)
+{
+    .#{$gl-colName}-#{$mq}-noBottom {
+        padding-bottom: 0;
+    }
+    .#{$gl-colName}-#{$mq}-withBottom {
+        padding-bottom: $gl-gutter-vertical;
+        @media (min-width: #{map-get($gl-mq-list, lg)}) {
+            padding-bottom: $gl-gutter-vertical*2;
+        }
+    }
+}
+
+// VERTICAL ALIGNMENT
+// -------
+// Function to generate the vertical align helper classes base on mq keys (as _lg-middle)
+// VERTICAL ALIGN
+@mixin verticalAlign {
+    @each $align, $value in $gl-v-list {
+        // GRID
+        .#{$gl-gridClass}-#{$align} {
+            align-items: $value;
+        }
+        // COL
+        .#{$gl-colName}-#{$align} {
+            align-self: $value;
+        }
+    }
+}
+@mixin verticalAlignResponsive($mq)
+{
+    @each $align, $value in $gl-v-list {
+        // GRID
+        .#{$gl-gridClass}-#{$mq}-#{$align} {
+            align-items: $value;
+        }
+        // COL
+        .#{$gl-colName}-#{$mq}-#{$align} {
+            align-self: $value;
+        }
+    }
+}
+
+// Function to generate the offset
+// REVIEW: 4/10 - PERFORMANCE ISSUES
+// ---------------------------------------------
+@mixin makeOff($off)
+{
+    .#{$gl-gridClass},
+    [#{$gl-attributeName}*="#{$gl-gridClass}-"] {
+        @for $i from 0 through $gl-colCount - 1 {
+            > [data-push-left*="#{$off}-#{$i}"]{ margin-left: map-get($gl-colPortions, $i); }
+        }
+    }
+
+  .#{$gl-gridClass},
+  [#{$gl-attributeName}*="#{$gl-gridClass}-"] {
+    @for $i from 0 through $gl-colCount - 1 {
+      > [data-push-right*="#{$off}-#{$i}"]{ margin-right: map-get($gl-colPortions, $i); }
+    }
+  }
+}
+
+@mixin container-wrap() {
+	max-width: $gl-max-width;
+	padding-right: calculateRem($gl-gutter-sides);
+    padding-left: calculateRem($gl-gutter-sides);
+	margin-right: auto;
+	margin-left: auto;
+	@media #{$gl-gutter-sides-breakpoint} {
+		padding-left: calculateRem($gl-gutter-sides-desktop);
+        padding-right: calculateRem($gl-gutter-sides-desktop);
+	}
+}

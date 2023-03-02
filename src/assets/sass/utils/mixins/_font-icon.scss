@@ -1,0 +1,17 @@
+@mixin font-icon($icon, $position: before, $fsize: 16px) {
+    &::before,
+    &::after {
+        font-weight: 900;
+        font-family: $font-icon;
+        font-size: $fsize;
+    }
+    @if $position == before {
+        &::before {
+            content: $icon;            
+        }
+    } @else {
+        &::after {
+            content: $icon;
+        }
+    }
+}

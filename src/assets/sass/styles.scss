@@ -1,0 +1,242 @@
+@import 'import';
+
+// ****************************************
+//
+// ****************************************
+//
+// ****************************************
+
+html,body {
+	height: 100%;
+}
+html {
+	font-size: 100%;
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+}
+body {
+	@include font-size($f-size);
+	font-family: $f-body;
+	color: $c-text;
+	line-height: 1.4;
+	padding: 0;
+	margin: 0;
+	min-width: 320px;
+	letter-spacing: .05em;
+	background-color: $body-background;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
+a,
+input,
+textarea,
+button,
+select,
+.button,
+[role='button'] {
+	&:focus { //## should be for accessibility
+		// outline: 0;
+		@include accessibility-outline;
+	}
+	&:focus:active {
+		outline: 0;
+	}
+}
+[tabindex='-1']:focus {
+	outline: 0;
+}
+button {
+	color: inherit; // reduce css file size
+}
+// headings
+h1, h2, h3, h4, h5, h6 {
+	font-family: $font-name;
+    margin-top: 0;
+    margin-bottom: calculateRem(20px);
+}
+h1, h2 {
+	@include font-size(30px);
+}
+a {
+	text-decoration: none;
+	color: $c-link;
+	cursor: pointer;
+	&:hover {
+		//color: $c-link-hover;
+		opacity: .7;
+	}
+	&:active {
+		text-decoration: inherit;
+	}
+}
+[role='button'] {
+	cursor: pointer;
+}
+::selection {
+	color: #fff;
+	background-color: $c-primary;
+}
+
+strong {
+	font-weight: 600;
+}
+
+p {
+	margin-bottom: calculateRem(30px);
+}
+em {
+	font-style: italic;
+}
+sup, sub {
+	font-size: .75em;
+	a {
+		color: inherit;
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+sup {
+	vertical-align: top;
+	a {
+		vertical-align: top;
+	}
+}
+sub {
+	vertical-align: bottom;
+	a {
+		vertical-align: bottom;
+	}
+}
+fieldset {
+	width: 100%;
+}
+
+input {
+	font-family: $font-name;
+	@include font-size($f-size);
+}
+
+// + Template
+// -------
+.page-wrap {
+	position: relative;
+	min-height: 100%;
+	transition: margin 700ms;
+}
+
+.content-wrap {
+	position: relative;
+}
+
+// bg imgage
+.bg-img_container {
+	// position: relative;
+	margin: 0 auto;
+	background-size: cover;
+	height: 100vh;
+	background-color: #000;
+
+
+	@media (min-width: 351px) and (max-height: 921px){
+		max-width: 351px;
+	}
+
+	@media (min-width: 519px) and (min-height: 921px){
+		max-width: 519px;
+	}
+}
+
+// questionnaire
+.questionnaire_wrapper {
+	position: relative;
+	z-index: 1;
+	padding: 0 14px 14px;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+.questionnaire-steps {
+    padding: calculateRem(25px) 0;
+    text-align: center;
+}
+.questionnaire-steps_text {
+    @include font-size($f-size-md);
+    color: #fff;
+    font-weight: 700;
+	margin-bottom: 0;
+	@media #{$tablet-portrait} {
+		@include font-size($f-size-xlg);
+	}
+}
+.questionnaire-container {
+    background: #fff;
+    border-radius: calculateRem(10px);
+    padding: calculateRem(15px);
+	box-shadow: 0 1px 5px 1px rgba(0, 0, 0, .4);
+	max-height: 70vh;
+    overflow-y: auto;
+	@media #{$tablet-portrait} {
+		padding: calculateRem(25px);
+	}
+}
+.questionnaire-title {
+    @include font-size($f-size-md);
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: calculateRem(25px);
+	.questionnaire-title_text { margin-bottom: 0; }
+	.bold {
+		color: $c-secundary;
+		text-transform: uppercase;
+	}
+}
+
+.questionnaire-item {
+    margin-bottom: calculateRem(20px);
+	margin-left: auto;
+	margin-right: auto;
+	button {
+		margin: 0 auto;
+		width: 100%;
+	}
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.questionnaire-container {
+	margin-top: auto;
+}
+
+.player_video_player {
+	position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+	&::before {
+		content: '';
+		background: rgba(0, 0, 0, 0.4);
+		z-index: 1;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.player_video {
+	position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}

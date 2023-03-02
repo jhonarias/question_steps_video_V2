@@ -1,0 +1,225 @@
+//************************
+//    CLASSES
+//************************
+
+.container-fluid {
+	max-width: 100%;
+	padding-right: 0;
+	padding-left: 0;
+	margin-right: 0;
+	margin-left: 0;
+	& > .grid {
+		margin-right: 0;
+		margin-left: 0;
+		& > .grid-col {
+			padding-right: 0;
+			padding-left: 0;
+		}
+	}
+}
+//## container-fluid background colors
+@each $class, $color in $gl-background-colors {
+	.#{$gl-gridClass}-#{$class} {
+		background-color: $color;
+	}
+}
+
+.container-wrap {
+	@include container-wrap;
+	 //## remove inner paddings to allow grid system inside itselfs
+	.container-wrap {
+		padding-right: 0;
+		padding-left: 0;
+	}
+
+	//## container-wrap background colors
+	@each $class, $color in $gl-background-colors {
+		&.#{$class} {
+			background-color: $color;
+		}
+	}
+}
+
+// GRID
+.#{$gl-gridClass} {
+	box-sizing: border-box;
+	display: flex;
+	flex-flow: row wrap;
+	margin-right: -($gl-gutter/2);
+	margin-left: -($gl-gutter/2);
+	// modifiers
+	&.container-wrap {
+		box-sizing: content-box;
+	}
+	// double gutter in desktop devices
+	@media (min-width: #{map-get($gl-mq-list, lg)}) {
+		margin-right: -$gl-gutter;
+		margin-left: -$gl-gutter;
+	}
+}
+
+// COLS
+.#{$gl-colClass} {
+	flex: 1 1 0%;
+	max-width: 100%;
+	padding-right: ($gl-gutter/2);
+	padding-left: ($gl-gutter/2);
+	padding-bottom: $gl-gutter-vertical;
+	box-sizing: border-box;
+	// double gutter on desktop devices
+	@media (min-width: #{map-get($gl-mq-list, lg)}) {
+		padding-right: $gl-gutter;
+		padding-left: $gl-gutter;
+		padding-bottom: ($gl-gutter-vertical*2);
+	}
+}
+
+/************************
+		HELPERS SUFFIXES
+*************************/
+// FOR GRID
+
+// HORIZONTAL ALIGN
+// -------
+// Horizontal alignment on center
+.#{$gl-gridClass}-center {
+	justify-content: center;
+}
+// Horizontal alignment on right
+.#{$gl-gridClass}-right {
+	justify-content: flex-end;
+	align-self: flex-end;
+	margin-left: auto;
+}
+
+// NO GUTTER
+// -------
+// No spacing between cols
+.#{$gl-gridClass}-noGutter {
+	margin-right: 0;
+	margin-left: 0;
+	> .#{$gl-colClass} {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+// NO WRAPPING
+// -------
+// No Wrapping
+.#{$gl-gridClass}-noWrap {
+	flex-wrap: nowrap;
+}
+
+// ORDERS
+// -------
+// Flex items order (reverse, column and column-reverse)
+.#{$gl-gridClass}-reverse {
+	flex-direction: row-reverse;
+}
+.#{$gl-gridClass}-column {
+	flex-direction: column;
+	> .#{$gl-colClass} {
+		flex-basis: auto;
+	}
+}
+.#{$gl-gridClass}-column-reverse {
+	flex-direction: column-reverse;
+}
+
+// COLS SPACES
+// -------
+// Spaces between and around cols
+.#{$gl-gridClass}-spaceBetween {
+	justify-content: space-between;
+}
+.#{$gl-gridClass}-spaceAround {
+	justify-content: space-around;
+}
+
+// EQUAL HEIGHT
+// -------
+// Equal heights columns
+.#{$gl-gridClass}-equalHeight > .#{$gl-colClass} {
+	align-self: stretch;
+	display: flex; // fix Safari IOS 10 equal height not work
+}
+
+// NO PADDING BOTTOM
+// -------
+// Removes the padding-bottom
+.#{$gl-gridClass}-noBottom > .#{$gl-colClass} {
+	padding-bottom: 0;
+}
+
+// MARGIN BOTTOM
+.#{$gl-gridClass}-marginBottom {
+ 	margin-bottom: calculateRem($gl-margin-bottom);
+}
+// -------
+// Add the margin-top
+.#{$gl-gridClass}-marginTop > .#{$gl-colClass} {
+	margin-top: calculateRem($gl-margin-top);
+}
+
+// Vertical align (top, middle, center)
+@each $align, $value in $gl-v-list {
+	.#{$gl-colName}-#{$align} {
+		align-items: $value;
+	}
+}
+.#{$gl-colName}-top {
+	align-self: flex-start;
+}
+.#{$gl-colName}-middle {
+	align-self: center;
+}
+.#{$gl-colName}-bottom {
+	align-self: flex-end;
+}
+
+@each $class, $color in $gl-background-colors {
+	.#{$gl-colClass}.#{$class} {
+		background-color: $color;
+	}
+}
+
+/************************
+		GRID BY NUMBER
+*************************/
+@include makeGridByNumber(#{$gl-gridClass});
+@each $mq-key, $mq-value in $gl-mq-list {
+	@include bp(#{$mq-key}) {
+		@include makeGridByNumber(#{$gl-gridClass}-#{$mq-key});
+	}
+}
+
+/************************
+		COLS SIZES
+*************************/
+@include makeCol(#{$gl-colName});
+// @include makeOff(off);
+@include makeFirstLast();
+@include verticalAlign;
+
+@each $mq-key, $mq-value in $gl-mq-list {
+	@include bp(#{$mq-key}) {
+		// REVIEW: eliminate '.col-' as prefix (UI - Grid\nsGridRender.cshtml)
+		@include makeCol(#{$gl-colName}-#{$mq-key});
+		//@include makeOff(#{$mq-key});
+		@include makeFirstLastResponsive(#{$mq-key});
+		@include verticalAlignResponsive(#{$mq-key});
+		@include makeNoBottomResponsiveModifier(#{$mq-key});
+	}
+}
+
+/************************
+		HIDING COLS
+*************************/
+@each $mq-key, $mq-value in $gl-mq-list {
+	@include bp(#{$mq-key}) {
+		[#{$gl-attributeName}*="#{$mq-key}-hidden"] {
+			display: none;
+		}
+	}
+}

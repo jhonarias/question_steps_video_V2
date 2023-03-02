@@ -1,0 +1,36 @@
+// + UI-ELEMENTS
+// -------
+// ++ Buttons
+$button-fontfamily: $f-body;
+$button-fontsize: $f-size;
+$button-boxshadow: inset 0 0 0 1px;
+$button-padding-top-bottom: 15px;
+$button-padding-left-right: 28px;
+$button-border-width: 2px;
+$button-border-radius: 50px;
+$button-fontweight: 500;
+$button-min-width: 220px;
+
+$btn-darken-percentage: 10%;
+$btn-lighten-percentage: 14%;
+
+// +++ button primary
+$btn-primary-color: #000;
+$btn-primary-bg: #fff;
+$btn-primary-border: #000;
+$btn-primary-border-hover: darken($btn-primary-border, $btn-darken-percentage);
+$btn-primary-bg-hover: darken($btn-primary-bg, $btn-darken-percentage);
+
+// +++ button inverse
+$btn-inverse-color: $c-text;
+$btn-inverse-bg: transparent;
+$btn-inverse-border: transparent;
+$btn-inverse-border-hover: darken($btn-inverse-border, $btn-darken-percentage);
+$btn-inverse-bg-hover: darken($btn-inverse-bg, $btn-darken-percentage);
+
+// + STATES
+// +++ disabled
+$button-disabled-color: #bbb;
+$button-disabled-background: #ddd;
+$button-disabled-border: $button-disabled-background;
+$button-disabled-opacity: .34;

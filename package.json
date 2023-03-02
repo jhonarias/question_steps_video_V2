@@ -1,0 +1,15 @@
+{
+  "name": "question_steps_video_v2",
+  "version": "1.0.0",
+  "description": "Movich Casa del Alferez",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch src/assets/sass/styles.scss -o dist"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.14.1"
+  }
+}
