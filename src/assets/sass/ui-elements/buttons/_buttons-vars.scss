@@ -15,9 +15,9 @@ $btn-darken-percentage: 10%;
 $btn-lighten-percentage: 14%;
 
 // +++ button primary
-$btn-primary-color: #000;
-$btn-primary-bg: #fff;
-$btn-primary-border: #000;
+$btn-primary-color: #fff;
+$btn-primary-bg: $c-primary;
+$btn-primary-border: $c-primary;
 $btn-primary-border-hover: darken($btn-primary-border, $btn-darken-percentage);
 $btn-primary-bg-hover: darken($btn-primary-bg, $btn-darken-percentage);
 

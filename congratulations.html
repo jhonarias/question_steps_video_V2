@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Site Description">
+    <link rel="apple-touch-icon" sizes="180x180" href="./src/assets/imgs/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./src/assets/imgs/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./src/assets/imgs/favicon/favicon-16x16.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="./dist/styles.css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700&amp;subset=latin-ext&amp;display=swap"
+        rel="stylesheet">
+
+    <title>Site title</title>
+    <script>
+        function loadPage() {
+            setTimeout(() => {
+                document.getElementById('loading').style.display = 'none';
+            }, 1000);
+        }
+    </script>
+</head>
+
+<body class="home-page" onload="loadPage();">
+    <div class="page-wrap">
+        <main class="maincontent">
+            <div class="content-wrap">
+                <div class="bg-img_container">
+                    <div class="loading" id="loading">
+                        <div class="loading_content">
+                            <h2 class="loading_text">Procesando...</h2>
+                            <div class="loader_container">
+                                <div class="loader"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="questionnaire_wrapper">
+                        <div class="message-final_container">
+                            <div class="message-final">
+                                <div class="message-final_section1">
+                                    <div class="message-final_image">
+                                        <img src="https://video.playfilm.tv/media/3/users/22465/resources/ganaenergialogofix_7c3r1IA.svg?seq=3"
+                                            alt="logo" class="logo" style="max-width: 235px">
+                                    </div>
+                                    <br><br>
+                                    <h1>¡MUCHAS GRACIAS!<br><br>Disfruta de energía sin costes adicionales y<br
+                                            style="box-sizing: border-box;">sin preocupaciones<br><br>
+                                        ➙ Ten a mano una factura, la vas necesitar😉.</h1>
+                                </div>
+                                <div class="message-final_section2">
+                                    <h2>En breve, un asesor de <u>Gana Energía</u>&nbsp;se pondrá en contacto contigo
+                                        📞 para mejorar tu oferta actual de luz💡 y/o gas🔥.</h2>
+                                </div>
+                                <div class="message-final_footer"><p>GANA ENERGÍA 2022</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
