@@ -242,7 +242,7 @@ input {
 	@include font-size($f-size);
 	color: #fff;
 	background-image: linear-gradient(to bottom right, $c-secundary, $c-color1);
-	min-height: calculateRem(93px);
+	min-height: calculateRem(75px);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -285,7 +285,7 @@ input {
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
-	min-height: calculateRem(70px);
+	min-height: calculateRem(60px);
 	box-sizing: border-box;
 	padding: calculateRem(5px) calculateRem(15px);
 	text-align: left;
@@ -349,7 +349,7 @@ input {
 	overflow: hidden;
 	&::before {
 		content: '';
-		background: rgba(0, 0, 0, 0.4);
+		background: rgba(0, 0, 0, 0.5);
 		z-index: 1;
 		position: absolute;
 		left: 0;

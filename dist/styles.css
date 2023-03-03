@@ -5851,7 +5851,7 @@ input {
   font-size: 1rem;
   color: #fff;
   background-image: linear-gradient(to bottom right, #00cfa7, #8bffc9);
-  min-height: 5.8125rem;
+  min-height: 4.6875rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -5879,7 +5879,7 @@ input {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  min-height: 4.375rem;
+  min-height: 3.75rem;
   box-sizing: border-box;
   padding: 0.3125rem 0.9375rem;
   text-align: left;
@@ -5926,7 +5926,7 @@ input {
   overflow: hidden; }
   .player_video_player::before {
     content: '';
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.5);
     z-index: 1;
     position: absolute;
     left: 0;
