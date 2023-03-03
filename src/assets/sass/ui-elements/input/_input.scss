@@ -40,14 +40,17 @@ $ui-form-group-gutter: 15px;
         }
     }
     .ui-label {
-        @include font-size($f-size); 
+        @include font-size($f-size-sm);
         display: inline-block;
-        margin-bottom: calculateRem(5px);      
+        margin-bottom: calculateRem(5px);
+        // @media #{$mobile} {
+        //     @include font-size($f-size);
+        // }
     }
     select.ui-input { cursor: pointer; }
     .ui-input,
     .ui-textarea {
-        @include font-size($f-size);
+        @include font-size($f-size-sm);
         // min-width: 320px;
         height: calculateRem(50px);
         padding: calculateRem(10px) calculateRem(20px);
@@ -55,6 +58,9 @@ $ui-form-group-gutter: 15px;
         border: 1px solid $c-color2;
         box-sizing: border-box;
         border-radius: calculateRem(6px);
+        // @media #{$mobile} {
+        //     @include font-size($f-size);
+        // }
     }
     .ui-textarea {
         min-height: 150px;
