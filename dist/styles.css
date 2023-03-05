@@ -5801,7 +5801,7 @@ input {
   background-size: cover;
   height: 100vh;
   background-color: #000; }
-  @media (min-width: 480px) and (max-height: 921px) {
+  @media (min-width: 351px) and (max-height: 921px) {
     .bg-img_container {
       max-width: 351px; } }
   @media (min-width: 519px) and (min-height: 921px) {

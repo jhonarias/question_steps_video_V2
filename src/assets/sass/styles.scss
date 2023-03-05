@@ -171,7 +171,7 @@ input {
 	background-color: #000;
 
 
-	@media (min-width: $bp-mobile-small) and (max-height: 921px) {
+	@media (min-width: 351px) and (max-height: 921px) {
 		max-width: 351px;
 	}
 
