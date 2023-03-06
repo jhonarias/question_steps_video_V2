@@ -5675,6 +5675,8 @@ button {
 
 html,
 body {
+  overflow: hidden;
+  width: 100%;
   height: 100%; }
 
 html {
@@ -5922,8 +5924,7 @@ input {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
-  overflow: hidden; }
+  z-index: 1; }
   .player_video_player::before {
     content: '';
     background: rgba(0, 0, 0, 0.5);
