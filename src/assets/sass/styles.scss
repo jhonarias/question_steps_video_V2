@@ -196,6 +196,9 @@ input {
 	height: 100%;
 	box-sizing: border-box;
 }
+.questionnaire-steps {
+	padding-bottom: calculateRem(20px);
+}
 
 .questionnaire-steps_description_top {
 	display: flex;
@@ -236,7 +239,7 @@ input {
 }
 
 .questionnaire-container {
-	max-height: 63%;
+	// max-height: 63%;
 	margin: auto calculateRem(18px) calculateRem(18px);
 	box-shadow: 0 1px 5px 1px rgba(0, 0, 0, .4);
 	background: #fff;
