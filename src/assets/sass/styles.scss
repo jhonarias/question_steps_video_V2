@@ -8,7 +8,7 @@
 
 html,
 body {
-	overflow: hidden;
+	// overflow: hidden;
 	width: 100%;
     height: 100%;
 }
@@ -162,6 +162,10 @@ input {
 
 .content-wrap {
 	position: relative;
+	position: fixed;
+    height: 100%;
+    left: 0;
+    width: 100%;
 }
 
 // bg imgage
@@ -169,7 +173,8 @@ input {
 	position: relative;
 	margin: 0 auto;
 	background-size: cover;
-	height: 100vh;
+	// height: 100vh;
+	height: 100%;
 	background-color: #000;
 
 
@@ -231,7 +236,7 @@ input {
 }
 
 .questionnaire-container {
-	max-height: 70vh;
+	max-height: 70%;
 	margin: auto calculateRem(18px) calculateRem(18px);
 	box-shadow: 0 1px 5px 1px rgba(0, 0, 0, .4);
 	background: #fff;
